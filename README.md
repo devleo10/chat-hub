@@ -1,1 +1,1 @@
-Lukano repo, keu dekhte pabe na.
+I'm not working on this project anymore.
