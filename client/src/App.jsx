@@ -18,7 +18,12 @@ const PrivateRoute = ({children}) =>{
 const AuthRoute = ({children}) =>{
   const {userInfo} = useAppStore();
   const isAuthenticated = !!userInfo;
-  return isAuthenticated ? <Navigate to="/chat"/>: children;
+  
+  if (isAuthenticated) {
+    // Redirect to profile if setup not done, otherwise to chat
+    return <Navigate to={userInfo.profileSetup ? "/chat" : "/profile"} />;
+  }
+  return children;
 }
 
 
